@@ -1,6 +1,6 @@
 # Default Environment
 
-- Nginx
+- Nginx (composer included)
 - Php 7 - fpm
 - Mysql
 
