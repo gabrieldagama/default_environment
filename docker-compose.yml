@@ -2,16 +2,17 @@ nginx:
     build: ./
     dockerfile: Dockerfile
     volumes:
-        - ~/Projects/default_environment:/var/www/html
+        - ~/Projects/laravel:/var/www/html
     ports:
         - "80:80"
         - "443:443"
     links:
         - fpm
 fpm:
-    image: php:7.1-fpm
+    build: ./
+    dockerfile: Fpm-Dockerfile
     volumes:
-        - ~/Projects/default_environment:/var/www/html
+        - ~/Projects/laravel:/var/www/html
     links:
         - mysql
 mysql:
