@@ -2,17 +2,16 @@ nginx:
     build: ./
     dockerfile: Dockerfile
     volumes:
-        - ~/Projects/laravel:/var/www/html
+        - ~/Projects/magento2:/var/www/html
     ports:
         - "80:80"
         - "443:443"
     links:
         - fpm
 fpm:
-    build: ./
-    dockerfile: Fpm-Dockerfile
+    image: meanbee/magento:7.1-fpm
     volumes:
-        - ~/Projects/laravel:/var/www/html
+        - ~/Projects/magento2:/var/www/html
     links:
         - mysql
 mysql:
